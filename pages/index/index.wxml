@@ -1,0 +1,34 @@
+<!--pages/index/index.wxml-->
+<view class='index'>
+  <image class='index_img_bg' src='../../img/bg.png'></image>
+  <image class='index_img_1' src='../../img/name.png'></image>
+  <image class='index_img_2' src='../../img/guojia.png'></image>
+  <image class='index_img_3' src='../../img/map.png'></image>
+  <image class='index_img_4' src='../../img/jiyu.png'></image>
+  <view class='btn'>
+    <view class='btn_children' bindtap='openQrCode'>
+      <image src='../../img/icon_saoyisao.png'></image>
+      <text>扫一扫</text>
+    </view>
+    <navigator url='../../pages/goods/goods'>
+      <view class='btn_children'>
+        <image src='../../img/icon_shangpin.png'></image>
+        <text>可溯商品</text>
+      </view>
+    </navigator>
+  </view>
+  <view class='btn'>
+    <navigator url='../../pages/company/company'>
+      <view class='btn_children'>
+        <image src='../../img/icon_qiye.png'></image>
+        <text>品牌企业</text>
+      </view>
+    </navigator>
+    <navigator url='../../pages/blockchain/blockchain'>
+      <view class='btn_children'>
+        <image src='../../img/icon_liulanqi.png'></image>
+        <text>区块链浏览器</text>
+      </view>
+    </navigator>
+  </view>
+</view>

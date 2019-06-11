@@ -1,0 +1,7 @@
+{
+  "name": "sj",
+  "dependencies": {
+    "vant-weapp": "^0.5.10" 
+  },
+  "version": "0.0.0"
+}

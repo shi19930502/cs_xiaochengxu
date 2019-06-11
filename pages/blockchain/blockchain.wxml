@@ -1,0 +1,33 @@
+<!--pages/blockchain/blockchain.wxml-->
+<view class='blockchain'>
+  <view class='header'>
+    <view class='header_list'>
+      <view>{{nodeCount}}</view>
+      <view class='name'>节点数</view>
+    </view>
+    <view class='header_list'>
+      <view>{{blockHeight}}</view>
+      <view class='name'>区块高度</view>
+    </view>
+    <view class='header_list'>
+      <view>{{transactionsTodayCount}}</view>
+      <view class='name'>今日交易数</view>
+    </view>
+    <view class='header_list'>
+      <view>{{transactionCount}}</view>
+      <view class='name'>累计交易总数</view>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='list_content list_content_top'>
+      <view class='c_code'>区块编码</view>
+      <view class='c_hash'>区块Hash</view>
+      <view class='c_date'>日期</view>
+    </view>
+    <view wx:for='{{dataList}}' wx:key='item.Number' class='list_content'>
+      <view class='c_code'>{{item.Number}}</view>
+      <view class='c_hash'>{{item.Hash}}</view>
+      <view class='c_date'>{{item.timestamp}}</view>
+    </view>
+  </view>
+</view>

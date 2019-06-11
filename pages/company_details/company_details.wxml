@@ -1,0 +1,44 @@
+<!--pages/company_details/company_details.wxml-->
+<view class='company_details'>
+  
+  <image class='banner' src='../../img/detail.png'></image>
+  <view class='content' id='content'>
+    <view class='addr_tel'> 
+      <view class='c_name'>
+        <view>{{companyList.conpanyName}}</view>
+        <image class='c_img' src='../../img/icon_qiye_2.png'></image>
+      </view>
+      <view class='addr'>
+        <view>所属地区：{{companyList.areaName}}</view>
+        <view>法人：{{companyList.legalpepresent}}</view>
+      </view>
+    </view>
+    <view class='addr_tel'>
+      <view class='c_name'>
+        <view>地址</view>
+        <image class='c_img_addr' src='../../img/icon_dizhi.png'></image>
+      </view>
+      <view class='addr_name'>{{companyList.address}}</view>
+    </view>
+    <view class='addr_tel'>
+      <view class='c_name'>
+        <view>联系电话</view>
+        <image bindtap='tel' data-tel='{{companyList.tel}}' class='c_img_tel c_img' src='../../img/icon_dianhua.png'></image>
+      </view>
+      <view  class='addr_name addr_list_tel'>
+        <view bindtap='tel' data-tel='{{companyList.tel}}'>{{companyList.tel}}</view>
+      </view>
+    </view>
+    <view class='addr_tel addr_tel_content'>{{companyList.briefIntro||'暂无简介'}}</view>
+  </view>
+   <!-- height: {{mapHeight}} -->
+  <map class='map'
+    style="width: 100%;height:500rpx;margin-top:-40rpx;"
+    enable-zoom='{{false}}'
+    enable-scroll='{{false}}'
+    longitude='{{longitude}}'
+    latitude='{{latitude}}' 
+    markers="{{markers}}"
+    scale='16'
+  ></map>
+</view>

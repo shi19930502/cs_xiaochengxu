@@ -1,0 +1,60 @@
+/* pages/blockchain/blockchain.wxss */
+.blockchain{
+  /* background: rgba(246, 246, 246, 1); */
+}
+.header{
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+
+}
+.header_list{
+  width: 50%;
+  text-align: center;
+  font-size: 42rpx;
+  line-height: 1;
+  box-sizing: border-box;
+  padding: 30rpx 20rpx;
+  border-bottom: 1rpx solid rgba(255,255,255,.3);
+  background: rgba(38, 150, 233, 1);
+}
+.header_list:nth-child(2n-1){
+  border-right: 1rpx solid rgba(255,255,255,.3);
+}
+.header_list .name{
+  font-size: 20rpx; 
+  margin-top: 23rpx;
+  color: rgba(255,255,255,.4)
+}
+.list_content{
+  display: flex;
+  font-size: 22rpx;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 1);
+  padding: 26rpx 20rpx;
+  border-bottom: 1px solid rgba(225, 225, 225, 1);
+  background: white;
+}
+.list_content_top{
+  color: rgba(102, 102, 102, 1);
+  padding: 16rpx 20rpx;
+  font-weight: bold;
+  font-size: 24rpx;
+  border-bottom: 1px solid rgba(225, 225, 225, 1);
+}
+.list_content:last-child{
+  margin-bottom: 60rpx;
+  /* border-bottom: none; */
+  /* border-bottom: 30px solid rgba(246, 246, 246, 1); */
+}
+.c_code{
+  flex-grow: 0;
+  width: 126rpx;
+}
+.c_hash{
+  flex: 1;
+}
+.c_date{
+  flex-grow: 0;
+  width: 230rpx;
+}

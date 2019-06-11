@@ -1,0 +1,255 @@
+<!--pages/goods_details/goods_details.wxml-->
+<view  class='goods_details' id='goods_details'>
+  <van-tabs animated sticky tab-active-class="tab-active-class" custom-class='custom-class' tab-class='tab-class'>
+   <van-tab title="采收信息">
+      <!-- 采收信息 -->
+      <view id='csxx' class='csxx'>
+        <image bindtap='showPop' class='csxx_look' src='../../img/cs_img.png'></image>
+        <view class='box'>
+          <view class='box_1'>
+            <view class='box_2'>
+              <view class='box_3'>
+                <image wx:if='{{queListObj.goodsCode=="01342011"}}' class='box_4_img' src='../../img/apple.png'></image>
+                <image wx:elif='{{queListObj.goodsCode=="01342026"}}' class='box_4_img' src='../../img/yintao.png'></image>
+
+              </view>
+            </view>
+          </view>
+          <view class='box_title_name'>{{queListObj.goodsName}}</view>
+          <view class='box_title_time'>采收时间:{{queListObj.detectiondate}}</view>
+        </view>
+
+        <view class='csxx_content'>
+          <view class='csxx_list'>
+            <image class='csxx_list_img' src='../../img/circle.png'></image>
+            <view class='csxx_list_msg'>
+              <view class='csxx_list_title'>采收企业名称</view>
+              <view class='csxx_list_name'>{{queListObj.salermarketName}}</view>
+            </view>
+          </view>
+          <view class='csxx_list'>
+            <image class='csxx_list_img' src='../../img/circle.png'></image>
+            <view class='csxx_list_msg'>
+              <view class='csxx_list_title'>采收基地</view>
+              <view class='csxx_list_name'>{{base.baseName}}</view>
+            </view>
+          </view>
+          <view class='csxx_list'>
+            <image class='csxx_list_img' src='../../img/circle.png'></image>
+            <view class='csxx_list_msg'>
+              <view class='csxx_list_title csxx_list_title_jc'>
+                <view>检测信息</view>
+                <view class='csxx_list_title_hege'>合格</view>
+              </view>
+              <view class='csxx_list_name csxx_list_name_jc'>
+                <view class='csxx_list_name_jc_left'>
+                  <view class='csxx_list_name_jc_left_title'>类目</view>
+                  <view>抑制率</view>
+                </view>
+                <view class='csxx_list_name_jc_left'>
+                  <view class='csxx_list_name_jc_left_title' style='margin-right:18px'>检测值</view>
+                  <view class='csxx_list_name_jc_right_henxian'>
+                    <view style='width:{{queListObj.pesticide}}rpx' class='csxx_list_name_jc_right_henxian_c'></view>
+                  </view>
+                  <view>{{queListObj.pesticide}}%</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="基地信息">
+      <!-- 基地信息 -->
+      <view id='base_information' class='base_information'>
+        <view class='base_thr_f'>
+          <view class='base_thr'>
+            <view class='base_thr_top'>
+              <view class='base_thr_top_name'>{{base.temperature}}</view>
+              <view class='base_thr_top_unit'>℃</view>
+            </view>
+            <view class='base_henxian'></view>
+            <view class='base_htr_top_title'>年平均温度</view>
+          </view>
+          <view class='base_thr'>
+            <view class='base_thr_top'>
+              <view class='base_thr_top_name'>{{base.altitude}}</view>
+              <view class='base_thr_top_unit'>m</view>
+            </view>
+            <view class='base_henxian'></view>
+            <view class='base_htr_top_title'>海拔</view>
+          </view>
+          <view class='base_thr'>
+            <view class='base_thr_top'>
+              <view class='base_thr_top_name'>{{base.precipitation}}</view>
+              <view class='base_thr_top_unit'>ml</view>
+            </view>
+            <view class='base_henxian'></view>
+            <view class='base_htr_top_title'>年平均降水量</view>
+          </view>
+        </view>
+        <view class='base_js'>
+          <view class='base_js_list'>
+            <image class='base_js_circle' src='../../img/circle.png'></image>
+            <view class='base_js_list_right'>
+              <view class='base_js_title'>基地名称</view>
+              <view class='base_js_name'>{{base.baseName}}</view>
+            </view>
+          </view>
+          <view class='base_js_list'>
+            <image class='base_js_circle' src='../../img/circle.png'></image>
+            <view class='base_js_list_right'>
+              <view class='base_js_title'>面积(亩) | 负责人</view>
+              <view class='base_js_name base_js_name_people'>
+                <view class='base_js_name_left '>
+                  <view class='base_js_name_left_name'>面积</view>
+                  <view class='base_js_name_left_num'>{{base.totalacreage}}</view>
+                </view>
+                <view class='base_js_name_left'>
+                  <view class='base_js_name_left_name'>负责人</view>
+                  <view class='base_js_name_left_num'>{{base.chargeperson}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class='base_js_list'>
+            <image class='base_js_circle' src='../../img/circle.png'></image>
+            <view class='base_js_list_right'>
+              <view class='base_js_title'>基地简介</view>
+              <view class='base_js_name'>{{base.description}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="农事记录">
+      <!-- 农事记录 -->
+      <view id='farm' class='farm'>
+        <!-- <view class='farm_title_f'>
+          <view class='farm_title'>
+            <view class='farm_title_henxian'></view>
+            <view class='farm_title_name'>农事记录</view>
+            <view class='farm_title_henxian'></view>
+          </view>
+        </view> -->
+        <view id='farm_list' class='farm_content'>
+          <view class='farm_thr_f'>
+            <view class='farm_thr {{farmNum==1?"farm_thr_native":""}}' data-num='1' bindtap='farmThr'>田间管理</view>
+            <view class='farm_thr {{farmNum==2?"farm_thr_native":""}}' data-num='2' bindtap='farmThr'>施肥管理</view>
+            <view class='farm_thr {{farmNum==3?"farm_thr_native":""}}' data-num='3' bindtap='farmThr'>用药管理</view>
+          </view>
+          <view class='farm_list' wx:for='{{farmList}}' wx:key='index'>
+            <view class='farm_list_top'>
+              <image src='{{img_url+item.imageUrl}}' class='farm_list_cz_img'></image>
+              <view class='farm_list_top_right'>
+                <view class='farm_list_top_title'>
+                  <view class='farm_list_top_title_left'>
+                    <image src='../../img/icon_zhu.png'></image>
+                    <view class='farm_list_top_title_left_name'>{{item.typeName}}</view>
+                  </view>
+                  <view class='farm_list_top_title_time'>{{item.indate}}</view>
+                </view>
+                <view class='farm_list_top_czr farm_list_top_czr_padding'>
+                  <view class='farm_list_top_czr_title'>操作人</view>
+                  <view class='farm_list_top_czr_name'>{{item.perator}}</view>
+                </view>
+                <view class='farm_list_top_czr'>
+                  <view class='farm_list_top_czr_title'>投入品</view>
+                  <view class='farm_list_top_czr_name'>{{item.inputName?item.inputName:'无'}}</view>
+                </view>
+              </view>
+            </view>
+            <view class='farm_list_bottom'>{{item.method}}</view>
+          </view>
+          <view class='no_farm_list' wx:if='{{farmList.length<=0}}'>
+            暂无数据
+          </view>
+
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="链条信息">
+      <!-- 链条信息 -->
+      <view id='ltxx' class='ltxx'>
+        <view class='ltxx_list' wx:for='{{ltxx}}' wx:key='index'>
+          <view class='ltxx_list_left' style='margin-top:{{index==0?"-9rpx":"273rpx"}}'>
+            <view class='ltxx_list_month'>{{item.month}}</view>
+            <view class='ltxx_list_year'>{{item.year}}</view>
+          </view>
+          <view class='ltxx_list_right'>
+            <view class='ltxx_list_right_top' wx:if='{{index!=0}}'>
+              <view class='ltxx_list_right_left'>
+                <image class='ltxx_henxian_img' src='../../img/circle.png'></image>
+                <view wx:for='wodeya' wx:key='item' class='ltxx_henxian'></view>
+              </view>
+              <view class='ltxx_list_right_right'>
+                <view class='ltxx_list_right_right_title'>批次号</view>
+                <view class='ltxx_list_right_right_batchId'>{{item.batchId}}</view>
+                <view class='ltxx_list_right_right_title'>溯源码</view>
+                <view class='ltxx_list_right_right_transId'>{{item.tranID}}</view>
+              </view>
+            </view>
+            <view class='ltxx_list_right_bottom'>
+              <view class='ltxx_list_right_left'>
+                <image class='ltxx_henxian_img' src='../../img/circle.png'></image>
+                <view wx:for='wodeya' wx:key='item' class='ltxx_henxian'></view>
+                <!-- 到时候判断数组，最后一个显示 -->
+                <image wx:if='{{ltxx.length==(index+1)}}' class='ltxx_henxian_img' src='../../img/circle.png'></image>
+              </view>
+              <view class='ltxx_list_right_right'>
+                <!-- 到时候判断数组，第一个显示入库 -->
+                <view class='ltxx_list_right_right_title'>{{index%2==0?'入库':'销售'}}</view>
+                <view class='ltxx_list_right_right_batchId'>{{item.salermarketName}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </van-tab>
+   
+  </van-tabs>
+
+</view>
+<van-popup
+  show="{{ showPopup }}"
+  position="right"
+  duration='100'
+  overlay="{{ true }}"
+  custom-class='popup_class'>
+  
+  <view class='popup_class_content'>
+    <view class='pop_top'>
+      <image class='pop_top_img' src='../../img/xq_bg.png'></image>
+      <view class='pop_top_title'>
+        <view>区块信息</view>
+        <image bindtap='closePop' src='../../img/xq_icon_close.png'></image>
+      </view>
+      
+    </view>
+    <view class='pop_bottom'>
+        <view class='pop_bottm_list'>
+          <view class='pop_bottom_list_title'>区块号</view>
+          <view class='pop_bottom_list_c'>{{goodLtxx.number}}</view>
+        </view>
+         <view class='pop_bottm_list'>
+          <view class='pop_bottom_list_title'>区块哈希</view>
+          <view class='pop_bottom_list_c'>{{goodLtxx.hash}}</view>
+        </view>
+         <view class='pop_bottm_list'>
+          <view class='pop_bottom_list_title'>父区块哈希</view>
+          <view class='pop_bottom_list_c'>{{goodLtxx.parentHash}}</view>
+        </view>
+         <view class='pop_bottm_list'>
+          <view class='pop_bottom_list_title'>挖矿账户</view>
+          <view class='pop_bottom_list_c'>{{goodLtxx.miner}}</view>
+        </view>
+         <view class='pop_bottm_list'>
+          <view class='pop_bottom_list_title'>上链时间</view>
+          <view class='pop_bottom_list_c'>{{goodLtxx.timestamp}}</view>
+        </view>
+      </view>
+  </view>
+  <view class='pop_footer'>--- 通过区块链底层技术，确保每一份商品的真实性 ---</view>
+  
+</van-popup>
+

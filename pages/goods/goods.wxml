@@ -1,0 +1,24 @@
+<!--pages/goods/goods.wxml-->
+<view class='goods' id='goods'>
+  <view class='list' wx:for="{{dataList}}" wx:key='item.tranID' data-tranid='{{item.tranID}}' bindtap='goGoodsDetails'>
+    <!-- <image class='list_img' src='{{img_url+item.pic}}'></image> -->
+
+    <image wx:if='{{item.goodsCode=="01342011"}}' class='list_img' src='../../img/pg_1.png'></image>
+    <image wx:elif='{{item.goodsCode=="01342026"}}' class='list_img' src='../../img/yt_1.png'></image>
+
+    <view class='list_children'>
+      <view class='list_name'>{{item.goodsName}}</view>
+      <view class='list_code'>
+        <image class='list_code_img' src='../../img/icon_ma.png'></image>
+        <view class='list_code_c'>{{item.tranID}}</view>
+      </view>
+      <view class='list_qk_name'> 
+        <view class='list_qk_name_left'>
+          <view class='list_qk_name_left_left'>区块链</view>
+          <view class='list_qk_name_left_right no_word_wrap'>***{{item.tshash}}***</view>
+        </view>
+        <view class='list_qk_name_right'>{{item.indate}}</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,24 @@
+<!--pages/company/company.wxml-->
+<scroll-view class='company' scroll-y lower-threshold='50px' bindscrolltolower='scrollBottom' 
+style="height: {{scrollHeight}};">
+  <view id='company'>
+    <view class='header_img'>
+      <image class='img_banner' src='../../img/banner.png'></image>
+      <image class='img_banner_text' src='../../img/qy.png'></image>
+    </view>
+
+    <view class='list_father'>
+      <view wx:for='{{dataList}}' class='list' bindtap='goCompanyDetails' data-id='{{item.companyId}}' wx:key="{{item.companyId}}">
+        <image class='list_img' src='{{img_url+item.companyImage}}'></image>
+        <view class='list_right'>
+          <text class='list_name'>{{item.conpanyName}}</text>
+          <view class='list_tel'>
+            <image catchtap='tel' data-tel='{{item.tel}}' class='tel_img' src='../../img/icon_dianhua.png'></image>
+            <text catchtap='tel' data-tel='{{item.tel}}'>{{item.tel}} </text>
+          </view>
+          <text class='list_addr'>{{item.address}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

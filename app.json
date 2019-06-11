@@ -1,0 +1,24 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/goods_details_new/goods_details",
+    "pages/goods_details/goods_details",
+    "pages/company/company",
+    "pages/company_details/company_details",
+    "pages/goods/goods",
+    "pages/blockchain/blockchain",
+    "pages/logs/logs",
+    "pages/web_view/web_view",
+    "pages/index_1/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "基于区块链农产品追溯",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "van-button": "/miniprogram_npm/vant-weapp/button/index"
+  },
+  "sitemapLocation": "sitemap.json"
+}
